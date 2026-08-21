@@ -7,7 +7,7 @@ app.use(express.json());
 app.use(cors());
 
 app.get("/", (req, res) => {
-  res.send("shes bhai pura shes!");
+  res.send("server is running!");
 });
 
 app.use("/users", userRouter);
