@@ -8,7 +8,11 @@ const getUsersCollection = () => {
 // CREATE
 export async function createUser(userData) {
   const usersCollection = getUsersCollection();
-  const result = await usersCollection.insertOne(userData);
+  const userFullData = {
+    ...userData,
+    role: "user",
+  };
+  const result = await usersCollection.insertOne(userFullData);
   return result;
 }
 
@@ -29,7 +33,7 @@ export async function editInfo(id, updatedInfo) {
   }
 
   const updatedInfodoc = {
-    $set: updatedInfo
+    $set: updatedInfo,
   };
 
   const result = await usersCollection.updateOne(query, updatedInfodoc);
