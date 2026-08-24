@@ -7,7 +7,7 @@ const port = 3000;
 async function startServer() {
   await connectToMongoDB();
   app.listen(port, () => {
-    console.log(`Example app listening on port ${port}`);
+    console.log(`the app listening on port ${port}`);
   });
 }
 
